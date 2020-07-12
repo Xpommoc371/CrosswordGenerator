@@ -25,7 +25,7 @@ SECRET_KEY = '8g#vd&+=q&3(tq^d%%tx_$w)tzd=h*o*x2$=5s6+xgk4r39#hl'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['crosswordgenerator.pythonanywhere.com', '127.0.0.1']
 
 
 # Application definition
