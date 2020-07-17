@@ -145,8 +145,7 @@ def zip_level(lev):
     file_paths = []
     path = os.path.join(os.path.dirname(os.path.realpath(__file__)), f'json/{lev}')
     for f in listdir(path):
-        with open(path + "/" + f, 'r', encoding="utf8", errors='ignore') as json_obj:
-            file_paths.append(json.loads(json_obj.read()))
+        file_paths.append(path + "/" + f)
     with ZipFile(file_name, 'w') as zip:
         # writing each file one by one
         for file in file_paths:
