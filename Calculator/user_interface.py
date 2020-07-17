@@ -57,7 +57,7 @@ def assignment_to_json(assignment, crossword, id):
     filename = f'{json_base_name}_{id}.json'
     if not os.path.exists(path):
         os.makedirs(path)
-    with open(path + '\\' + filename, 'w') as outfile:
+    with open(path + '\\' + filename, 'w', encoding="utf8", errors='ignore') as outfile:
         json.dump(json_string, outfile)
 
 
@@ -118,7 +118,7 @@ def set_params(time, word_num, attempts, first_templ, last_templ, json_base):
 
 def handle_uploaded_file(f):
     path = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'input\example.txt')
-    with open(path, 'wb+') as destination:
+    with open(path, 'wb+', encoding="utf8", errors='ignore') as destination:
         for chunk in f.chunks():
             destination.write(chunk)
 
@@ -134,7 +134,7 @@ def get_all_jsons(lev):
     ret_arr = []
     path = os.path.join(os.path.dirname(os.path.realpath(__file__)), f'json\{lev}')
     for f in listdir(path):
-        with open(path + "\\"+f, 'r') as json_obj:
+        with open(path + "\\"+f, 'r', encoding="utf8", errors='ignore') as json_obj:
             ret_arr.append(json.loads(json_obj.read()))
     return ret_arr
 

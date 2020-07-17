@@ -2,7 +2,7 @@ from collections import defaultdict
 
 
 def read_from_file(filename):
-    with open(filename) as f:
+    with open(filename, encoding="utf8", errors='ignore') as f:
         input_lines = [line.split("\t") for line in f]
     output_dict = {}
     output_array = []
