@@ -2,6 +2,7 @@ import random
 import json
 import os
 from os import listdir
+from zipfile import ZipFile
 from Calculator import FillCrossword
 from Calculator import FileManagement
 from Calculator import TimeTracking
@@ -137,5 +138,18 @@ def get_all_jsons(lev):
         with open(path + "/"+f, 'r', encoding="utf8", errors='ignore') as json_obj:
             ret_arr.append(json.loads(json_obj.read()))
     return ret_arr
+
+
+def zip_level(lev):
+    file_name = f"{lev}.zip"
+    file_paths = []
+    path = os.path.join(os.path.dirname(os.path.realpath(__file__)), f'json/{lev}')
+    for f in listdir(path):
+        with open(path + "/" + f, 'r', encoding="utf8", errors='ignore') as json_obj:
+            file_paths.append(json.loads(json_obj.read()))
+    with ZipFile(file_name, 'w') as zip:
+        # writing each file one by one
+        for file in file_paths:
+            zip.write(file)
 
 # generate_num_crosswords(attempts_num)

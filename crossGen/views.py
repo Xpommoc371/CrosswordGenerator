@@ -21,4 +21,6 @@ def landing(request):
 def view_jsons(request):
     cur_level = request.GET['lev']
     json_files = user_interface.get_all_jsons(cur_level)
+    if request.POST:
+        user_interface.zip_level(cur_level)
     return render(request, "OutputViewer.html", {"json_files": json_files})
