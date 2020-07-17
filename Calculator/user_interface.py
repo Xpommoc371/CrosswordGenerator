@@ -8,7 +8,7 @@ from Calculator import TimeTracking
 from Calculator.crossword import *
 
 len_distribution_list = [0] * 16
-path = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'input\example.txt')
+path = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'input/example.txt')
 Data = FileManagement.read_from_file(path)
 words_list = Data[1]
 words_dict = Data[0]
@@ -17,7 +17,7 @@ sorted_words_list = FileManagement.sort_list_by_len(words_list)
 
 def get_random_template(first_index, last_index):
     template_index = random.randint(first_index, last_index)
-    path = os.path.join(os.path.dirname(os.path.realpath(__file__)),f'{template_folder}\\template{template_index}.txt')
+    path = os.path.join(os.path.dirname(os.path.realpath(__file__)),f'{template_folder}/template{template_index}.txt')
     template = path
     return template
 
@@ -53,11 +53,11 @@ def assignment_to_json(assignment, crossword, id):
                          }
                    }
     print(json_string)
-    path = os.path.join(os.path.dirname(os.path.realpath(__file__)), f'json\{json_base_name}')
+    path = os.path.join(os.path.dirname(os.path.realpath(__file__)), f'json/{json_base_name}')
     filename = f'{json_base_name}_{id}.json'
     if not os.path.exists(path):
         os.makedirs(path)
-    with open(path + '\\' + filename, 'w', encoding="utf8", errors='ignore') as outfile:
+    with open(path + '/' + filename, 'w', encoding="utf8", errors='ignore') as outfile:
         json.dump(json_string, outfile)
 
 
@@ -132,9 +132,9 @@ def initialize_words():
 
 def get_all_jsons(lev):
     ret_arr = []
-    path = os.path.join(os.path.dirname(os.path.realpath(__file__)), f'json\{lev}')
+    path = os.path.join(os.path.dirname(os.path.realpath(__file__)), f'json/{lev}')
     for f in listdir(path):
-        with open(path + "\\"+f, 'r', encoding="utf8", errors='ignore') as json_obj:
+        with open(path + "/"+f, 'r', encoding="utf8", errors='ignore') as json_obj:
             ret_arr.append(json.loads(json_obj.read()))
     return ret_arr
 
