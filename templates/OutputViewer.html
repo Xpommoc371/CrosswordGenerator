@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<table border="1px;">
+    <thead><tr><td>id</td> <td>json file</td></tr></thead>
+    <tbody>
+{% for json in json_files %}
+    <tr><td>{{json.level.id}}</td> <td>{{json}}</td></tr>
+{%endfor%}
+    </tbody>
+</table>
+
+
+{% endblock %}

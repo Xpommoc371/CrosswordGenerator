@@ -1,11 +1,37 @@
 {% load static %}
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    {% block scripts %}{% endblock %}
-</head>
-<body>
-        {% block content %}{% endblock %}
-</body>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta charset="UTF-8">
+        <title>Cross Generator</title>
+        <link rel="shortcut icon" type="image/png" href="{% static 'FavIcon.ico' %}"/>
+        <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/cover/">
+        <!-- Bootstrap core CSS -->
+        <!-- <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet"> -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="{% static 'css/cover.css' %}" rel="stylesheet">
+        {% block scripts %}{% endblock %}
+    </head>
+
+    <body>
+        <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+          <header class="masthead mb-auto">
+            <div class="inner">
+              <h3 class="masthead-brand">Cross Generator</h3>
+            </div>
+          </header>
+
+            {% block content %}{% endblock %}
+
+          <footer class="mastfoot mt-auto">
+            <div class="inner">
+              <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+            </div>
+          </footer>
+        </div>
+    </body>
 </html>

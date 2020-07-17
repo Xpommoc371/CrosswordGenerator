@@ -4,4 +4,5 @@ from . import views
 
 urlpatterns = [
     path('', views.landing, name="landing"),
+    path('view_json', views.view_jsons, name="view_json")
 ]

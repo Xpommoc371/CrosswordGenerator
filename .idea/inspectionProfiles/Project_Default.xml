@@ -5,6 +5,10 @@
       <option name="ignoredIdentifiers">
         <list>
           <option value="Gifts_html_builder" />
+          <option value="FillCrossword" />
+          <option value="FileManagement" />
+          <option value="TimeTracking" />
+          <option value="Calculator.user_interface.crossword" />
         </list>
       </option>
     </inspection_tool>

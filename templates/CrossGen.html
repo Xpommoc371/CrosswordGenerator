@@ -1,2 +1,32 @@
 {% extends 'base.html' %}
-{% block content %} Cross gen{% endblock %}
+{% block content %}
+
+<div class="row">
+    <div class="col">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <p>Please select file for generation : <input type="file" name="csvfile" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"/></p>
+            <input type="submit" value="Send">
+        </form>
+        <form method="post" onsubmit="func1()">
+            {% csrf_token %}
+            <p>json_base_name: <input type="text" id="json_name" name="json_base_name" required/></p>
+            <p>time_for_solution_search: <input type="number" name="time_for_solution_search" required/></p>
+            <p>words_number: <input type="number" name="words_number" required/></p>
+            <p>attempts_num: <input type="number" name="attempts_num" required/></p>
+            <p>template_first_id: <input type="number" name="template_first_id" required/></p>
+            <p>template_last_id: <input type="number" name="template_last_id" required/></p>
+            <input type="submit" value="Send">
+        </form>
+
+    </div>
+
+</div>
+<script type= "text/javascript">
+function func1(){
+  var x = document.getElementById("json_name").value;
+  console.log(x);
+  window.open('view_json?lev='+x, '_blank');
+}
+</script>
+{% endblock %}
