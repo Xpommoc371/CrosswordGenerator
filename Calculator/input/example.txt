@@ -68,7 +68,7 @@ RUNG	Step of ladder
 EARWIG	Insect with pincers
 EDENTATE	Toothless creature
 ASUNDER	Into pieces
-GARAGE	Car's home (or hospital?)
+GARAGE	Car's home (or hospital?))
 SPOOL	Cylinder for winding film etc
 VITAL	Essential
 FROG	Amphibian
