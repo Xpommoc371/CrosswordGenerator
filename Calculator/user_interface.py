@@ -118,7 +118,7 @@ def set_params(time, word_num, attempts, first_templ, last_templ, json_base):
 
 def handle_uploaded_file(f):
     path = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'input\example.txt')
-    with open(path, 'wb+', encoding="utf8", errors='ignore') as destination:
+    with open(path, 'wb+') as destination:
         for chunk in f.chunks():
             destination.write(chunk)
 
